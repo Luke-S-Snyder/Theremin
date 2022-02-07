@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Theremin</title>
+        <script src="synthesizer.js"></script>
+        <script src="draggable.js"></script>
+    </head>
+    <body>
+        <div id="noise" style="position:absolute">
+            Frequency: 0hz, Volume: 0%
+        </div>
+        <br/>
+        <div id="mydiv" style="position:absolute;">
+            <img src="../images/red_ball.png" style="max-width:150px;max-height:150px;width:auto;height:auto;">
+        </div>
+        <script>
+            let synthesizer = new Synthesizer(window.innerWidth, window.innerHeight);
+            dragElement(document.getElementById("mydiv"), synthesizer);
+        </script>
+    </body>
+</html>
