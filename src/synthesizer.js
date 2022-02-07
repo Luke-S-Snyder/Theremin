@@ -19,8 +19,11 @@ Synthesizer.prototype.createTheremin = function() {
 }
 
 Synthesizer.prototype.play = function(x, y, output_elmnt) {
+    // Constrain volume to [0, 100]
     volume = ~~(x / this.width * 100);
     volume = Math.max(0, Math.min(100, volume));
+
+    // Constrain frequency to [0, 1000]
     freq = ~~((1 - (y / this.height)) * 1000);
     freq = Math.max(0, Math.min(1000, freq));
 
